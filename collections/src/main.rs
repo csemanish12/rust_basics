@@ -42,4 +42,19 @@ fn main() {
     let value2 = String::from("world");
     let full = format!("{value1} {value2}");
     println!("full message is: {full}");
+
+    // Hashmaps
+    use std::collections::HashMap;
+
+    let mut scores: HashMap<String, i32> = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 20);
+
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name).copied().unwrap_or(0);
+    println!("score is: {}", score);
+
+    for (key, value) in &scores {
+        println!("{} {}", key, value);
+    }
 }
